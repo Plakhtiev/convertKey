@@ -15,12 +15,23 @@
             margin-left: 20px;
             font-size: 20px;
         }
+        .out {
+            border:1px solid brown;
+            padding: 2px;
+            width: max-content;
+            margin-top: 10px;
+
+        }
     </style>
     <div class="input">
         <input type="text" id="inp" onfocus="this.value=''" maxlength="32">введи ключ
     </div>
     <button id="btn" onclick="cov1()">Конвертировать</button>
     <div>
+        <div class="out">
+            <p id="out"></p>
+            <span> тут без пробела после 8-й пары</span>
+        </div>        
         <!-- <input type="text" id="convert-key" value=""> -->
     </div>
     <script>
@@ -41,10 +52,11 @@
                 let end = key.slice(24, 48);
                 const resultKey = (`${begin} ${end}`);
                 alert(resultKey);
-                        };    
-
-
-        
+                var p;
+                var ps;
+                p = document.getElementById('out');
+                p.innerHTML = resultKey;                
+                        };            
     </script>
 </body>
 </html>
