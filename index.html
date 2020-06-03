@@ -1,62 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>convertKey</title>
 </head>
-<body>
-    <style>
-        .input {            
-            margin: 20px;
-            font-size: 20px;
-        }
-        #btn {            
-            margin-left: 20px;
-            font-size: 20px;
-        }
-        .out {
-            border:1px solid brown;
-            padding: 2px;
-            width: max-content;
-            margin-top: 10px;
 
-        }
-    </style>
+<body>
+    <h3>Конвертация ключей</h3>
     <div class="input">
-        <input type="text" id="inp" onfocus="this.value=''" maxlength="32">введи ключ
+        <input type="text" class="inp_convertkey" maxlength="32" placeholder="введи ключ">
     </div>
-    <button id="btn" onclick="cov1()">Конвертировать</button>
+    <div class="result">
+        <textarea class="out" name="res" cols="48" rows="1"></textarea>
+    </div>
+    <button class="btn_convertkey">Convert & copy</button>
+    <!-- <h3>Для ночного инита</h3>
     <div>
-        <div class="out">
-            <p id="out"></p>
-            <span> тут без пробела после 8-й пары</span>
-        </div>        
-        <!-- <input type="text" id="convert-key" value=""> -->
+        <textarea class="merch_input" cols="30" rows="10" placeholder="Input merch"></textarea>
     </div>
-    <script>
-        function cov1() {
-            let inputKey = document.getElementById('inp').value;
-            const convertKey = (str) => {
-                let index = 0;
-                let result = '';
-                while (index < str.length) {
-                    const currentChar = str.slice(index, index +2);
-                    result = `${result} ${currentChar}`;
-                    index = index + 2;
-                }
-                return result;
-                };
-                const key = convertKey(inputKey);
-                let begin = key.slice(0, 24);
-                let end = key.slice(24, 48);
-                const resultKey = (`${begin} ${end}`);
-                alert(resultKey);
-                var p;
-                var ps;
-                p = document.getElementById('out');
-                p.innerHTML = resultKey;                
-                        };            
-    </script>
+    <button class="merch_convert-btn">go</button>
+    <div>
+        <textarea class="merch_convert-out" cols="60" rows="10" placeholder="merch_convert"></textarea>
+    </div> -->
+    <script src="./js.js"></script>
 </body>
+
 </html>
