@@ -19,6 +19,23 @@ function convertKey() {
 }
 convertBtn.addEventListener('click', convertKey);
 
-// const merchInput = document.querySelector('.merch_input');
-// const convertBtn = document.querySelector('.merch_convert-btn');
-// const merchOut = document.querySelector('.merch_convert-out');
+
+const convertBtn2 = document.querySelector('.merch_convert-btn');
+const merchOut = document.querySelector('.merch_convert-out');
+//[{"merchant": "S1110ZWY", "merchant": "S11103W2"}]
+
+
+function transform() {
+    let input = document.querySelector('.merch_input').value
+        .toUpperCase()
+        .split('\n');
+    let out = [];
+    for (let i = 0; i < input.length; i++) {
+        out.push(`"merchant": "${input[i]}"`);
+    }
+    merchOut.textContent = out;
+}
+
+document.querySelector('.merch_convert-btn').onclick = transform;
+
+const a = "S1110ZnY S1110ZWY S1110ZWY";
