@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input:hover,
+textarea:hover {
+    outline-offset: 0;
+    background-color: rgb(212, 212, 212);
+    box-shadow: none;
+    outline: none;
+}
+
+input:active,
+input:focus {
+    outline: none;
+    outline-offset: 0;
+    box-shadow: none;
+}
+
+input,
+textarea {
+    width: 600px;
+    font-size: 18px;
+    caret-color: red;
+    box-shadow: none;
+    outline: none;
+}
+
+button {
+    height: 50px;
+    width: 180px;
+    margin: 10px 0px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 20px;
+    border: none;
+    background-color: rgb(43, 187, 43);
+}
+
+button:hover {
+    background-color: rgba(43, 187, 43, 0.5);
+}

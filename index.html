@@ -5,27 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>convertKey</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <img src="https://privatbank.ua/uploads/media/default/0001/10/be6ea8ea5161dc9be3fa9eb4b2fa1fdea222cebc.png" alt="privatLogo" />
-    <h3>Конвертация ключей</h3>
-    <div class="input">
-        <input type="text" class="inp_convertkey" maxlength="32" placeholder="введи ключ">
-    </div>
-    <div class="result">
-        <textarea class="out" name="res" cols="48" rows="1"></textarea>
-    </div>
-    <button class="btn_convertkey">Convert & copy</button>
-    <h3>Для ночного инита</h3>
-    <div>
-        <textarea class="merch_input" cols="30" rows="10" placeholder="Input merch"></textarea>
-    </div>
-    <button class="merch_convert-btn">go</button>
-    <div>
-        <textarea class="merch_convert-out" cols="50" rows="100" placeholder="merch_convert"></textarea>
-    </div>
-    <script src="./js.js"></script>
+    <div class="wrapper">
+        <h3>Конвертация ключей</h3>
+        <div class="input">
+            <input type="text" class="inp_convertkey" maxlength="32" placeholder="введи ключ">
+        </div>
+        <div class="result">
+            <textarea class="out" name="res" cols="48" rows="3"></textarea>
+        </div>
+        <button class="btn_convertkey">Convert & copy</button>
+        <h3>Для ночного инита</h3>
+        <div>
+            <textarea class="merch_input" cols="30" rows="5" placeholder="Input merch"></textarea>
+        </div>
+        <button class="merch_convert-btn">go</button>
+        <button class="merch_convert-copy">copy</button>
+        <button class="merch_convert-clear">clear</button>
+        <div>
+            <div>
+                <textarea class="merch_convert-out" cols="100" rows="20" placeholder="merch_convert"></textarea>
+            </div>
+        </div>
+        <script src="./js.js"></script>
 </body>
 
 </html>

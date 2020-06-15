@@ -34,8 +34,20 @@ function transform() {
         out.push(`{"merchant": "${input[i]}"}`);
     }
     merchOut.textContent = out;
+    console.log(merchOut);
 }
 
 document.querySelector('.merch_convert-btn').onclick = transform;
 
-const a = "S1110ZnY S1110ZWY S1110ZWY";
+function copy() {
+    let textArea = document.querySelector('.merch_convert-out');
+    textArea.select();
+    document.execCommand("copy");
+}
+document.querySelector('.merch_convert-copy').onclick = copy;
+
+function clear() {
+    document.querySelector('.merch_input').value = '';
+    merchOut.textContent = '';
+}
+document.querySelector('.merch_convert-clear').onclick = clear;
