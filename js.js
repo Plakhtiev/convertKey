@@ -31,7 +31,7 @@ function transform() {
         .split('\n');
     let out = [];
     for (let i = 0; i < input.length; i++) {
-        out.push(`"merchant": "${input[i]}"`);
+        out.push(`{"merchant": "${input[i]}"}`);
     }
     merchOut.textContent = out;
 }
