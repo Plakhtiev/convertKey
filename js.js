@@ -33,8 +33,11 @@ function transform() {
     for (let i = 0; i < input.length; i++) {
         out.push(`{"merchant": "${input[i]}"}`);
     }
-    merchOut.textContent = out;
-    console.log(merchOut);
+    merchOut.textContent = `[${out}]`;
+    // for (let i = 0; i < input.length; i++) {
+    //     out += JSON.stringify({ merchant: `${input[i]}` }, null, '\t');
+    // }
+    // merchOut.textContent = out;
 }
 
 document.querySelector('.merch_convert-btn').onclick = transform;
