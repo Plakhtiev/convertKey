@@ -23,21 +23,28 @@ convertBtn.addEventListener('click', convertKey);
 const convertBtn2 = document.querySelector('.merch_convert-btn');
 const merchOut = document.querySelector('.merch_convert-out');
 //[{"merchant": "S1110ZWY", "merchant": "S11103W2"}]
+// [{"merchant": "S1110ZWY", "date": "24.03.2020 16:00:00"},
+// {"merchant": "S11103W2", "date": "24.03.2020 16:00:00"}]
 
+const dateInit = document.querySelector('.date');
 
 function transform() {
     let input = document.querySelector('.merch_input').value
         .toUpperCase()
         .split('\n');
+
     let out = [];
+
     for (let i = 0; i < input.length; i++) {
-        out.push(`{"merchant": "${input[i]}"}`);
+        if (dateInit.value) {
+
+            out.push(`{"merchant": "${input[i]}", "date": "${dateInit.value}"}`);
+        } else {
+            out.push(`{"merchant": "${input[i]}"}`);
+        }
     }
     merchOut.textContent = `[${out}]`;
-    // for (let i = 0; i < input.length; i++) {
-    //     out += JSON.stringify({ merchant: `${input[i]}` }, null, '\t');
-    // }
-    // merchOut.textContent = out;
+
 }
 
 document.querySelector('.merch_convert-btn').onclick = transform;
@@ -52,5 +59,6 @@ document.querySelector('.merch_convert-copy').onclick = copy;
 function clear() {
     document.querySelector('.merch_input').value = '';
     merchOut.textContent = '';
+    dateInit.value = '';
 }
 document.querySelector('.merch_convert-clear').onclick = clear;
