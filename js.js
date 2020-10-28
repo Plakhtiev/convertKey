@@ -5,7 +5,7 @@ const out = document.querySelector('.out')
 function convertKey() {
     let inputKey = document.querySelector('.inp_convertkey');
     let result = '';
-    for (let i = 0; i < inputKey.value.length; i = i + 2) {
+    for (let i = 1; i < inputKey.value.length; i = i + 2) {
         let char = inputKey.value.slice(i, i + 2);
         result = `${result} ${char}`;
     }
