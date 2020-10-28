@@ -2,22 +2,30 @@ const convertBtn = document.querySelector('.btn_convertkey');
 const conv = document.querySelector('.result');
 const out = document.querySelector('.out')
 
-function convertKey() {
-    let inputKey = document.querySelector('.inp_convertkey');
-    let result = '';
-    for (let i = 1; i < inputKey.value.length; i = i + 2) {
-        let char = inputKey.value.slice(i, i + 2);
-        result = `${result} ${char}`;
+const convertKey = key => {
+    const firstPartKey = key.slice(1, Math.ceil(key.length / 2));
+    const secondPartKey = key.slice(Math.ceil(key.length / 2), key.length);
+    const convert = (part) => {
+        const arr = [];
+        for (let i = 0; i < part.length; i += 2) {
+            arr.push(part.slice(i, i + 2))
+        }
+        return arr.join(' ');
     }
-    const key = result;
-    let begin = key.slice(1, result.length / 2);
-    let end = key.slice(result.length / 2, result.length);
-    out.innerText = `${begin} ${end}`;
+
+    const arr = [convert(firstPartKey), convert(secondPartKey)]
+    return arr.join('  ')
+}
+
+function convertInput() {
+    const inputKey = document.querySelector('.inp_convertkey');
+
+    out.innerText = convertKey(inputKey.value);
     inputKey.value = '';
     out.select();
     document.execCommand("copy");
 }
-convertBtn.addEventListener('click', convertKey);
+convertBtn.addEventListener('click', convertInput);
 
 
 const convertBtn2 = document.querySelector('.merch_convert-btn');
